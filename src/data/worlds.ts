@@ -1,33 +1,41 @@
 import type { World } from "./types";
 
-export const WORLDS: World[] = [
+export const WORLDS = [
   {
     id: "artists",
     name: "Artistes",
-    color: "#f97373", // rouge clair
-    order: 0,
+    subtitle: "Au cœur de l'écosystème, la création",
+    color: "#f97373",
     level: 1,
+    x: 50,
+    y: 50,
   },
   {
-    id: "recorded_music",
+    id: "recorded",
     name: "Musique enregistrée",
-    color: "#22c55e", // vert clair
-    order: 1,
+    subtitle: "L'industrie du disque",
+    color: "#4ade80",
     level: 1,
+    x: 75,
+    y: 50,
   },
   {
     id: "live",
     name: "Live",
-    color: "#fb923c", // orange clair
-    order: -1,
+    subtitle: "La branche du spectacle vivant",
+    color: "#fb923c",
     level: 1,
+    x: 25,
+    y: 50,
   },
   {
     id: "publishing",
     name: "Édition musicale",
-    color: "#3b82f6", // bleu clair
-    order: 2,
+    subtitle: "La gestion des droits d'auteur et droits voisins",
+    color: "#60a5fa",
     level: 1,
+    x: 50,
+    y: 20,
   },
   {
     id: "audiovisual",
