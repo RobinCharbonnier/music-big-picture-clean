@@ -1,4 +1,4 @@
-import type { World } from "./types";
+
 
 export const WORLDS = [
   {
