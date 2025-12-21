@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ACTORS } from "../../data/actors";
+import { WORLDS } from "../../data/worlds";
 
 type Level = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
@@ -28,8 +29,18 @@ export function EcosystemVisualization() {
           ))}
         </div>
       </header>
-
-<div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  {WORLDS.filter(world => world.level === level).map(world => (
+    <div
+      key={world.id}
+      className="p-4 rounded border border-slate-700"
+      style={{ backgroundColor: world.color }}
+    >
+      <h2 className="font-semibold text-slate-900">{world.name}</h2>
+    </div>
+  ))}
+</div>
+      <div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
   {ACTORS.filter(actor => actor.level === level).map(actor => (
     <div
       key={actor.id}
