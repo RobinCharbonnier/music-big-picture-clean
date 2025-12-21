@@ -1,0 +1,193 @@
+import type { Actor } from "./types";
+
+export const ACTORS: Actor[] = [
+  // Artistes
+  {
+    id: "songwriters",
+    name: "Auteurs-compositeurs",
+    worldId: "artists",
+    valueChainPosition: 0.1,
+    level: 3,
+  },
+  {
+    id: "performers",
+    name: "Interprètes",
+    worldId: "artists",
+    valueChainPosition: 0.2,
+    level: 3,
+  },
+
+  // Musique enregistrée
+  {
+    id: "studio_engineer",
+    name: "Ingénieur du son",
+    worldId: "recorded_music",
+    valueChainPosition: 0.1,
+    level: 3,
+  },
+  {
+    id: "studio_da",
+    name: "Directeur artistique (DA)",
+    worldId: "recorded_music",
+    valueChainPosition: 0.15,
+    level: 3,
+  },
+  {
+    id: "studio_exec_producer",
+    name: "Producteur exécutif",
+    worldId: "recorded_music",
+    valueChainPosition: 0.18,
+    level: 3,
+  },
+  {
+    id: "ar",
+    name: "A&R",
+    worldId: "recorded_music",
+    valueChainPosition: 0.22,
+    level: 3,
+  },
+  {
+    id: "record_label",
+    name: "Producteur phonographique",
+    worldId: "recorded_music",
+    valueChainPosition: 0.3,
+    level: 3,
+  },
+  {
+    id: "phonographic_publisher",
+    name: "Éditeur phonographique",
+    worldId: "recorded_music",
+    valueChainPosition: 0.4,
+    level: 3,
+  },
+  {
+    id: "physical_distributor",
+    name: "Distributeur physique",
+    worldId: "recorded_music",
+    valueChainPosition: 0.6,
+    level: 3,
+  },
+  {
+    id: "physical_retail",
+    name: "Point de vente physique",
+    worldId: "recorded_music",
+    valueChainPosition: 0.7,
+    level: 3,
+  },
+  {
+    id: "digital_distributor",
+    name: "Distributeur digital",
+    worldId: "recorded_music",
+    valueChainPosition: 0.6,
+    level: 3,
+  },
+  {
+    id: "aggregator",
+    name: "Agrégateur",
+    worldId: "recorded_music",
+    valueChainPosition: 0.55,
+    level: 3,
+  },
+  {
+    id: "digital_retail",
+    name: "Point de vente digital",
+    worldId: "recorded_music",
+    valueChainPosition: 0.75,
+    level: 3,
+  },
+
+  // Live
+  {
+    id: "live_producer",
+    name: "Producteur de spectacle",
+    worldId: "live",
+    valueChainPosition: 0.2,
+    level: 3,
+  },
+  {
+    id: "live_promoter",
+    name: "Diffuseur de spectacles",
+    worldId: "live",
+    valueChainPosition: 0.3,
+    level: 3,
+  },
+  {
+    id: "venue_operator",
+    name: "Exploitant de lieu",
+    worldId: "live",
+    valueChainPosition: 0.4,
+    level: 3,
+  },
+  {
+    id: "ticketing",
+    name: "Billettistes",
+    worldId: "live",
+    valueChainPosition: 0.6,
+    level: 3,
+  },
+  {
+    id: "live_providers",
+    name: "Prestataires techniques",
+    worldId: "live",
+    valueChainPosition: 0.5,
+    level: 3,
+  },
+
+  // Édition
+  {
+    id: "music_publisher",
+    name: "Éditeur musical",
+    worldId: "publishing",
+    valueChainPosition: 0.2,
+    level: 3,
+  },
+  {
+    id: "publishing_admin",
+    name: "Gestionnaire",
+    worldId: "publishing",
+    valueChainPosition: 0.3,
+    level: 3,
+  },
+  {
+    id: "sub_publisher",
+    name: "Sous-éditeur",
+    worldId: "publishing",
+    valueChainPosition: 0.35,
+    level: 3,
+  },
+  {
+    id: "sacem",
+    name: "Sacem",
+    worldId: "publishing",
+    valueChainPosition: 0.5,
+    level: 3,
+  },
+  {
+    id: "ogc_performers",
+    name: "OGC interprètes",
+    worldId: "publishing",
+    valueChainPosition: 0.55,
+    level: 3,
+  },
+  {
+    id: "ogc_producers",
+    name: "OGC producteurs phonographiques",
+    worldId: "publishing",
+    valueChainPosition: 0.6,
+    level: 3,
+  },
+  {
+    id: "spre",
+    name: "SPRE",
+    worldId: "publishing",
+    valueChainPosition: 0.65,
+    level: 3,
+  },
+  {
+    id: "copie_france",
+    name: "Copie France",
+    worldId: "publishing",
+    valueChainPosition: 0.7,
+    level: 3,
+  },
+];
