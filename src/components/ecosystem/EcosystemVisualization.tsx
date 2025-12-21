@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ACTORS } from "../../data/actors";
 
 type Level = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
@@ -27,6 +28,18 @@ export function EcosystemVisualization() {
           ))}
         </div>
       </header>
+
+<div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  {ACTORS.filter(actor => actor.level === level).map(actor => (
+    <div
+      key={actor.id}
+      className="p-4 bg-slate-800 rounded border border-slate-700"
+    >
+      <h2 className="font-semibold">{actor.name}</h2>
+      <p className="text-sm text-slate-400">Chaîne de valeur : {actor.valueChainPosition}</p>
+    </div>
+  ))}
+</div>
 
       <main className="flex-1 flex flex-col items-center justify-center p-8">
         {level === 1 && (
