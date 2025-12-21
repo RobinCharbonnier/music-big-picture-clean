@@ -29,17 +29,30 @@ export function EcosystemVisualization() {
           ))}
         </div>
       </header>
-      <div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-  {WORLDS.filter(world => world.level === level).map(world => (
-    <div
-      key={world.id}
-      className="p-4 rounded border border-slate-700"
-      style={{ backgroundColor: world.color }}
-    >
-      <h2 className="font-semibold text-slate-900">{world.name}</h2>
-    </div>
-  ))}
-</div>
+      <div className="relative w-full h-[600px]">
+        {WORLDS.filter(w => w.level <= level).map(world => (
+          <div
+            key={world.id}
+            className="absolute p-4 rounded border border-slate-700 flex flex-col justify-center items-center"
+            style={{
+              backgroundColor: world.color,
+              height: "160px",
+              width: "160px",
+              left: `${world.x}%`,
+              top: `${world.y}%`,
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            <h2 className="font-semibold text-slate-900">{world.name}</h2>
+            {world.subtitle && (
+              <p className="text-sm text-slate-900 opacity-80 text-center mt-1">
+                {world.subtitle}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+
       <div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
   {ACTORS.filter(actor => actor.level === level).map(actor => (
     <div
