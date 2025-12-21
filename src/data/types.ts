@@ -13,6 +13,11 @@ export interface World {
   color: string; // couleur de base du monde (clair)
   order: number; // pour l'organisation spatiale / niveau
   level: 1 | 2 | 3; // niveau de "zoom" principal auquel ce monde apparaît
+
+  // 🆕 Ajouts nécessaires pour la spatialisation
+  x: number; // position horizontale en %
+  y: number; // position verticale en %
+  subtitle?: string; // sous-titre optionnel
 }
 
 export interface Actor {
