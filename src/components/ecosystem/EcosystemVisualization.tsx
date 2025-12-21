@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { WORLDS } from "../../data/worlds";
-import { ACTORS } from "../../data/actors";
-import { FLOWS } from "../../data/flows";
+import { worlds } from "../../data/worlds";
+import { actors } from "../../data/actors";
+import { flows } from "../../data/flows";
 
 type Level = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
