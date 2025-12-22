@@ -29,7 +29,10 @@ export function EcosystemVisualization() {
           ))}
         </div>
       </header>
-      <div className="relative w-full h-[600px]">
+      <div
+  className="relative w-full h-[600px] origin-top-left"
+  style={{ transform: "scale(var(--zoom))" }}
+>
         {WORLDS.filter(w => w.level <= level).map(world => (
           <div
             key={world.id}

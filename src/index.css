@@ -1,3 +1,7 @@
+:root {
+  --zoom: calc(min(100vw / 1200, 1));
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
