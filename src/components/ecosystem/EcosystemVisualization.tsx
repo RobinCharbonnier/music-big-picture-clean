@@ -43,11 +43,16 @@ export function EcosystemVisualization() {
             className="absolute p-4 rounded border border-slate-700 flex flex-col items-center"
             style={{
               backgroundColor: world.color,
-              height: "200px",
-              width: "200px",
+              minHeight: "200px",
+              minWidth: "200px",
               left: `${world.x}%`,
               top: `${world.y}%`,
               transform: "translate(-50%, -50%)",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              paddingBottom: "12px",
             }}
           >
             <h2 className="font-semibold text-slate-900 text-center text-xl">
@@ -80,23 +85,6 @@ export function EcosystemVisualization() {
           </div>
         ))}
       </div>
-
-      {/* GRID OF ACTORS — ONLY FROM LEVEL 3 */}
-      {level >= 3 && (
-        <div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {ACTORS.filter((actor) => actor.level === level).map((actor) => (
-            <div
-              key={actor.id}
-              className="p-4 bg-slate-800 rounded border border-slate-700"
-            >
-              <h2 className="font-semibold">{actor.name}</h2>
-              <p className="text-sm text-slate-400">
-                Chaîne de valeur : {actor.valueChainPosition}
-              </p>
-            </div>
-          ))}
-        </div>
-      )}
     </div>
   );
 }
