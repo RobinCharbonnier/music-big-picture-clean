@@ -43,9 +43,9 @@ export function EcosystemVisualization() {
               transform: "translate(-50%, -50%)",
             }}
           >
-            <h2 className="font-semibold text-slate-900">{world.name}</h2>
+            <h2 className="font-semibold text-slate-900 text-center text-xl">{world.name}</h2>
             {world.subtitle && (
-              <p className="text-sm text-slate-900 opacity-80 text-center mt-1">
+              <p className="text-md text-slate-900 opacity-80 text-center mt-1">
                 {world.subtitle}
               </p>
             )}
@@ -64,48 +64,6 @@ export function EcosystemVisualization() {
     </div>
   ))}
 </div>
-
-      <main className="flex-1 flex flex-col items-center justify-center p-8">
-        {level === 1 && (
-          <p className="text-slate-300">
-            Ici on affichera les 4 mondes principaux (Artistes, Musique
-            enregistrée, Live, Édition) avec des blocs symétriques.
-          </p>
-        )}
-        {level === 2 && (
-          <p className="text-slate-300">
-            Ici on affichera l'écosystème étendu (ajout Audiovisuel, Autres
-            diffuseurs, État).
-          </p>
-        )}
-        {level === 3 && (
-          <p className="text-slate-300">
-            Ici on affichera le détail des mondes avec les acteurs (vue
-            "galaxie").
-          </p>
-        )}
-        {level === 4 && (
-          <p className="text-slate-300">
-            Ici on affichera les flux financiers entre acteurs.
-          </p>
-        )}
-        {level === 5 && (
-          <p className="text-slate-300">
-            Ici on affichera les liens contractuels entre acteurs.
-          </p>
-        )}
-        {level === 6 && (
-          <p className="text-slate-300">
-            Ici on affichera les flux de data entre acteurs.
-          </p>
-        )}
-        {level === 7 && (
-          <p className="text-slate-300">
-            Ici on affichera la vue experte avec tous les flux et tous les
-            acteurs.
-          </p>
-        )}
-      </main>
     </div>
   );
 }
