@@ -36,8 +36,8 @@ export function EcosystemVisualization() {
             className="absolute p-4 rounded border border-slate-700 flex flex-col justify-center items-center"
             style={{
               backgroundColor: world.color,
-              height: "160px",
-              width: "160px",
+              height: "200px",
+              width: "200px",
               left: `${world.x}%`,
               top: `${world.y}%`,
               transform: "translate(-50%, -50%)",

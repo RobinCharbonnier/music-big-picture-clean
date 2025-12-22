@@ -16,7 +16,7 @@ export const WORLDS = [
     subtitle: "L'industrie du disque",
     color: "#4ade80",
     level: 1,
-    x: 75,
+    x: 70,
     y: 50,
   },
   {
@@ -25,7 +25,7 @@ export const WORLDS = [
     subtitle: "La branche du spectacle vivant",
     color: "#fb923c",
     level: 1,
-    x: 25,
+    x: 30,
     y: 50,
   },
   {
@@ -43,6 +43,8 @@ export const WORLDS = [
     color: "#facc15", // jaune
     order: -2,
     level: 2,
+    x: 70,
+    y: 20,
   },
   {
     id: "other_broadcasters",
@@ -50,6 +52,9 @@ export const WORLDS = [
     color: "#9ca3af", // gris
     order: 3,
     level: 2,
+    x: 30,
+    y: 20,
+
   },
   {
     id: "state",
@@ -57,5 +62,7 @@ export const WORLDS = [
     color: "#a855f7", // violet
     order: -3,
     level: 2,
+    x: 50,
+    y: 80,
   },
 ];
