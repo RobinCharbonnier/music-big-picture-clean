@@ -9,10 +9,12 @@ export function EcosystemVisualization() {
 
   return (
     <div className="min-h-screen bg-slate-900 text-slate-50 flex flex-col">
+      {/* HEADER */}
       <header className="p-4 border-b border-slate-800 flex items-center justify-between">
         <h1 className="text-xl font-semibold">
           Cartographie de l'écosystème musical
         </h1>
+
         <div className="flex gap-2">
           {[1, 2, 3, 4, 5, 6, 7].map((l) => (
             <button
@@ -29,14 +31,16 @@ export function EcosystemVisualization() {
           ))}
         </div>
       </header>
+
+      {/* SPATIAL MAP */}
       <div
-  className="relative w-full h-[600px] origin-top-left"
-  style={{ transform: "scale(var(--zoom))" }}
->
-        {WORLDS.filter(w => w.level <= level).map(world => (
+        className="relative w-full h-[600px] origin-top-left"
+        style={{ transform: "scale(var(--zoom))" }}
+      >
+        {WORLDS.filter((w) => w.level <= level).map((world) => (
           <div
             key={world.id}
-            className="absolute p-4 rounded border border-slate-700 flex flex-col justify-center items-center"
+            className="absolute p-4 rounded border border-slate-700 flex flex-col items-center"
             style={{
               backgroundColor: world.color,
               height: "200px",
@@ -46,27 +50,53 @@ export function EcosystemVisualization() {
               transform: "translate(-50%, -50%)",
             }}
           >
-            <h2 className="font-semibold text-slate-900 text-center text-xl">{world.name}</h2>
+            <h2 className="font-semibold text-slate-900 text-center text-xl">
+              {world.name}
+            </h2>
+
             {world.subtitle && (
               <p className="text-md text-slate-900 opacity-80 text-center mt-1">
                 {world.subtitle}
               </p>
             )}
+
+            {/* ACTORS INSIDE WORLDS — ONLY FROM LEVEL 3 */}
+            {level >= 3 && (
+              <div className="mt-3 flex flex-col gap-2 w-full">
+                {ACTORS.filter((actor) => actor.worldId === world.id)
+                  .sort(
+                    (a, b) => a.valueChainPosition - b.valueChainPosition
+                  )
+                  .map((actor) => (
+                    <div
+                      key={actor.id}
+                      className="w-full p-2 bg-slate-800 text-slate-100 rounded border border-slate-700 text-xs"
+                    >
+                      {actor.name}
+                    </div>
+                  ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
 
-      <div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-  {ACTORS.filter(actor => actor.level === level).map(actor => (
-    <div
-      key={actor.id}
-      className="p-4 bg-slate-800 rounded border border-slate-700"
-    >
-      <h2 className="font-semibold">{actor.name}</h2>
-      <p className="text-sm text-slate-400">Chaîne de valeur : {actor.valueChainPosition}</p>
-    </div>
-  ))}
-</div>
+      {/* GRID OF ACTORS — ONLY FROM LEVEL 3 */}
+      {level >= 3 && (
+        <div className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {ACTORS.filter((actor) => actor.level === level).map((actor) => (
+            <div
+              key={actor.id}
+              className="p-4 bg-slate-800 rounded border border-slate-700"
+            >
+              <h2 className="font-semibold">{actor.name}</h2>
+              <p className="text-sm text-slate-400">
+                Chaîne de valeur : {actor.valueChainPosition}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
