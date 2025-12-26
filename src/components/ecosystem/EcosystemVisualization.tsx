@@ -67,7 +67,7 @@ export function EcosystemVisualization() {
 
             {/* ACTORS INSIDE WORLDS — ONLY FROM LEVEL 3 */}
             {level >= 3 && (
-              <div className="mt-3 flex flex-row gap-2 flex-wrap justify-center w-full">
+              <div className="mt-3 flex flex-col gap-2 w-full">
                 {ACTORS.filter((actor) => actor.worldId === world.id)
                   .sort(
                     (a, b) => a.valueChainPosition - b.valueChainPosition
@@ -75,15 +75,7 @@ export function EcosystemVisualization() {
                   .map((actor) => (
                     <div
                       key={actor.id}
-                      style={{
-                        backgroundColor: `${world.color}CC`, // teinte du monde
-                        color: "#fff",
-                        border: "1px solid #1e293b",
-                        borderRadius: "4px",
-                        padding: "4px 8px",
-                        fontSize: "0.75rem",
-                        whiteSpace: "nowrap",
-                      }}
+                      className="w-full p-2 bg-slate-800 text-slate-100 rounded border border-slate-700 text-xs"
                     >
                       {actor.name}
                     </div>
